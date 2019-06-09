@@ -22,6 +22,15 @@ To run the application, follow the steps below:
 To run the repository along with the API, simply use `yarn up` or to run the API independantly, use `yarn api:dev`.
 
 
+**Testing & Linting**
+
+To run the tests (Jest), simply use `yarn test`.
+
+To run the linter (ESlint), use `yarn lint`.
+
+Linting and testing rules can be found in `package.json`.
+
+
 **Implementation**
 
 If you are interested in inspecting how prime numbers are generated, see `./src/util/primeslist.util.js`.
