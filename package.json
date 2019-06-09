@@ -2,19 +2,93 @@
   "name": "touchbistro",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
+  "proxy": "http://localhost:9000",
   "scripts": {
+    "up": "concurrently --kill-others \"react-scripts start\" \"npm run api:dev\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.js",
+    "api:prestart": "npm run -s api:build",
+    "api:start": "node api/dist/index.js",
+    "api:dev": "nodemon api/src/index.js --exec \"node -r dotenv/config -r babel-register\"",
+    "api:clean": "rimraf api/dist",
+    "api:build": "npm run api:clean && mkdir -p api/dist && babel api/src -s -D -d api/dist",
+    "api:test": "jest --watch",
+    "api:lint": "eslint api/src api/test"
+  },
+  "dependencies": {
+    "antd": "^3.19.2",
+    "axios": "^0.19.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.18.2",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "jest": "24.7.1",
+    "morgan": "^1.9.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "rimraf": "^2.6.3",
+    "yenv": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.5.0",
+    "babel-register": "^6.26.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^5.15.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-watch": "^5.0.1",
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-class-properties"
+    ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "parser": "babel-eslint",
+    "plugins": [
+      "import",
+      "jest",
+      "react"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "jest/no-focused-tests": 2,
+      "jest/no-identical-title": 2
+    }
   },
   "browserslist": {
     "production": [
@@ -27,5 +101,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "v10.15.3"
   }
 }

@@ -1,0 +1,15 @@
+.logo {
+  height: 56px;
+  pointer-events: none;
+}
+
+.content {
+  background-color: #FFEB3B;
+  height: calc(100vh - 120px);
+  font-size: calc(10px + 2vmin);
+  color: rgb(77, 77, 77);
+}
+
+.content-row {
+  height: 100%;
+}
