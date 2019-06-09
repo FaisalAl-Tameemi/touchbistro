@@ -7,7 +7,7 @@ import './App.css'
 function App() {
   return (
     <Layout>
-      <Layout.Header>
+      <Layout.Header style={{ background: '#2c3e50' }}>
         <img src={'/touchbistro.logo.png'} className="logo" alt="logo" />
       </Layout.Header>
       <Layout.Content className="content">
@@ -25,8 +25,8 @@ function App() {
           </Col>
         </Row>
       </Layout.Content>
-      <Layout.Footer>
-
+      <Layout.Footer style={{ padding: 20 }}>
+          Built by <a target="_blank" href="https://github.com/FaisalAl-Tameemi/">Faisal Al-Tameemi</a>
       </Layout.Footer>
     </Layout>
   )
