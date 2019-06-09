@@ -28,3 +28,4 @@ If you are interested in inspecting how prime numbers are generated, see `./src/
 
 The implementation is based on Sieve of Eratosthenes's algorithm, see [this link](https://www.geeksforgeeks.org/sieve-of-eratosthenes/) for more details.
 
+The UI framework used is called [AntDesign](https://ant.design/).
