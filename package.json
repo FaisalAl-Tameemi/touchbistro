@@ -9,7 +9,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint src",
     "api:prestart": "npm run -s api:build",
     "api:start": "node api/dist/index.js",
     "api:dev": "nodemon api/src/index.js --exec \"node -r dotenv/config -r babel-register\"",
@@ -87,7 +87,8 @@
     ],
     "rules": {
       "jest/no-focused-tests": 2,
-      "jest/no-identical-title": 2
+      "jest/no-identical-title": 2,
+      "semi": ["error", "never"]
     }
   },
   "browserslist": {

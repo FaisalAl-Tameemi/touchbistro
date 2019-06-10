@@ -26,7 +26,7 @@ function App() {
         </Row>
       </Layout.Content>
       <Layout.Footer style={{ padding: 20 }}>
-          Built by <a target="_blank" href="https://github.com/FaisalAl-Tameemi/">Faisal Al-Tameemi</a>
+          Built by <a target="_blank" rel="noopener noreferrer" href="https://github.com/FaisalAl-Tameemi/">Faisal Al-Tameemi</a>
       </Layout.Footer>
     </Layout>
   )
