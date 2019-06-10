@@ -30,6 +30,8 @@ To run the linter (ESlint), use `yarn lint`.
 
 Linting and testing rules can be found in `package.json`.
 
+> _Note:_ This repo does not used semi-colons but that is a stylistic choice. Can be easily changed using ESLint.
+
 
 **Implementation**
 
