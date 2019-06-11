@@ -21,6 +21,12 @@ To run the application, follow the steps below:
 > _Note:_ the API portion of this repository is entirely optional but was created for completeness and usage in future projects.
 To run the repository along with the API, simply use `yarn up` or to run the API independantly, use `yarn api:dev`.
 
+Also if you are using __docker-compose__ then use the following steps instead:
+
+1. From within the repository, run `chmod +x setup.sh`
+2. run `./setup.sh` to install all dependencies
+3. run `docker-compose up web` to run the react app
+
 
 **Testing & Linting**
 
